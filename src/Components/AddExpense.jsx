@@ -1,5 +1,5 @@
-
-export function AddExpense() {
+import { useState } from "react";
+export function AddExpense(addExpense) {
 
 
     return (
@@ -8,30 +8,32 @@ export function AddExpense() {
         <p className="text-sm text-gray-600 mb-4">
           Enter your expense details below
         </p>
-        <input
-          className="w-full mb-2 p-2 border rounded-md ..."
-          type="text"
-          placeholder="Expense title"
-        />
-        <input
-          className="w-full mb-2 p-2 border rounded-md ..."
-          type="text"
-          placeholder="Enter expense description"
-        />
-        <input
-          className="w-full mb-2 p-2 border rounded-md ..."
-          type="text"
-          placeholder="Enter expense category"
-        />
-        <input
-          className="w-full mb-2 p-2 border rounded-md ..."
-          type="number"
-          placeholder="Enter amount"
-        />
-        <input className="w-full mb-4 p-2 border rounded" type="date" />
-        <button className="w-full bg-purple-700 text-white py-2 hover:bg-purple-800 rounded-md ...">
-          Submit
-        </button>
+        <form action="" className="border p-2 rounded-xl w-full">
+          <input
+            className="border p-2 bg-white rounded-full ... mb-2"
+            type="text"
+            placeholder="Expense title"
+          />
+          <input
+            className="border p-2 bg-white rounded-full ... mb-2"
+            type="text"
+            placeholder="Enter expense description"
+          />
+          <input
+            className="border p-2 bg-white rounded-full ... mb-2"
+            type="text"
+            placeholder="Enter expense category"
+          />
+          <input
+            className="border p-2 bg-white rounded-full ... mb-2"
+            type="number"
+            placeholder="Enter amount"
+          />
+          <input className="border p-2 bg-white rounded-full ..." type="date" />
+          <button className="w-full bg-purple-700 text-white py-2 hover:bg-purple-800 rounded-md ...">
+            Submit
+          </button>
+        </form>
       </div>
     );
 }

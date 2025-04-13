@@ -1,8 +1,14 @@
 import { AddExpense } from "./Components/AddExpense";
 import { ExpenseTable } from "./Components/ExpenseTable";
-
+import { useState } from "react";
 function App() {
-  
+  const [expenses, setExpenses] = useState([]);
+  console.log(expenses)
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleAddExpense = (newExpense) => {
+    setExpenses((prev) => [...prev, newExpense]);
+  };
   return (
     <>
       <main className="min-h-screen flex p-5 gap-4">
@@ -18,8 +24,12 @@ function App() {
             </p>
           </header>
           <div className="flex gap-2">
-            <AddExpense />
-            <ExpenseTable />
+            <AddExpense addExpense={handleAddExpense} />
+            <ExpenseTable
+              expenses={expenses}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
           </div>
         </div>
       </main>
