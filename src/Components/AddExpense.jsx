@@ -29,9 +29,9 @@ export function AddExpense({ onAddExpense }) {
       <h2 className="text-xl font-bold mb-2">Add Expense</h2>
       <p className="text-sm text-gray-600 mb-4">
         Enter your expense details below
-          </p>
-          
-          {/* form for adding the expenses */}
+      </p>
+
+      {/* form for adding the expenses */}
       <form onSubmit={handleSubmit} className="border p-2 rounded-xl w-full">
         <input
           className="border p-2 bg-white rounded-full ... mb-2"
@@ -62,24 +62,24 @@ export function AddExpense({ onAddExpense }) {
         />
         <input
           className="border p-2 bg-white rounded-full ... mb-2"
-                  type="number"
-                  name="amount"
-                  value={form.amount}
-                  onChange={handleChange}
-                  placeholder="Enter amount"
-                  required
+          type="number"
+          name="amount"
+          value={form.amount}
+          onChange={handleChange}
+          placeholder="Enter amount"
+          required
         />
         <input
           className="border p-2 bg-white rounded-full ... mb-2"
-                  type="date"
-                  name="date"
-                  value={form.date}
-                  onChange={handleChange}
-                  required
-              />
-              
-              {/* submit button */}
-        <button className="w-full bg-purple-700 text-white py-2 hover:bg-purple-800 rounded-3xl">
+          type="date"
+          name="date"
+          value={form.date}
+          onChange={handleChange}
+          required
+        />
+
+        {/* submit button */}
+        <button className="w-full bg-purple-500 hover:bg-purple-400 text-white font-bold py-2 px-4 border-b-4 border-purple-700 hover:border-purple-500 rounded">
           Submit
         </button>
       </form>

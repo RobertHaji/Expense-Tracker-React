@@ -10,6 +10,12 @@ function App() {
     setExpenses([...expenses, expense]); //Append new expense in existing list
   };
 
+  // Function to remove expenses from the list
+
+  const handleDeleteExpense = (indexToDelete) => {
+    setExpenses(expenses.filter((_, index) => index !== indexToDelete));
+  };
+
   return (
     <>
       <main className="min-h-screen flex p-0 gap-4 border-40 border-purple-900">
@@ -27,12 +33,13 @@ function App() {
 
           {/* Add expense form and expense table */}
           <div className="flex gap-2">
-            <AddExpense onAddExpense={handleAddExpense} />{" "}
+            <AddExpense onAddExpense={handleAddExpense} />
             {/*onAddExpense prop allowing AddExpense form to send data back up to the App component to update the expense list. */}
             <ExpenseTable
               expenses={expenses}
               searchTerm={searchTerm}
               onSearch={setSearchTerm}
+              onDeleteExpense={handleDeleteExpense}
             />
           </div>
         </div>

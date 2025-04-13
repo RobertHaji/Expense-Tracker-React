@@ -1,11 +1,17 @@
 import { SearchBar } from "./SearchBar";
-export function ExpenseTable({ expenses, searchTerm, onSearch }) { //expenses, searchTerm and onSearch props passed to Expense table
-// Filter expense based on description/tiltle matching the search
-    const filteredExpenses = expenses.filter(
-      (expense) =>
-        expense.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        expense.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+export function ExpenseTable({
+  expenses,
+  searchTerm,
+  onSearch,
+  onDeleteExpense,
+}) {
+  //expenses, searchTerm and onSearch props passed to Expense table
+  // Filter expense based on description/tiltle matching the search
+  const filteredExpenses = expenses.filter(
+    (expense) =>
+      expense.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      expense.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   return (
     <div className="flex-1 overflow-x-auto">
       <SearchBar value={searchTerm} onChange={onSearch} />
@@ -18,6 +24,7 @@ export function ExpenseTable({ expenses, searchTerm, onSearch }) { //expenses, s
             <th className="p-2 text-left">Category</th>
             <th className="p-2 text-left">Amount</th>
             <th className="p-2 text-left">Date</th>
+            <th className="p-2 text-left">Remove</th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +43,14 @@ export function ExpenseTable({ expenses, searchTerm, onSearch }) { //expenses, s
                 <td className="p-3">{expense.category}</td>
                 <td className="p-3">{expense.amount}</td>
                 <td className="p-3">{expense.date}</td>
+                <td className="p-2">
+                  <button
+                    onClick={() => onDeleteExpense(index)}
+                    className="text-red-500 hover:underline"
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))
           )}
