@@ -8,7 +8,7 @@ export function ExpenseTable({ expenses, searchTerm, onSearch }) {
     );
   return (
     <div className="flex-1 overflow-x-auto">
-      <SearchBar />
+          <SearchBar value={ searchTerm} onChange={onSearch}/>
       <table className="w-full table-auto border-collapse mt-3.5">
         <thead className="bg-black text-white rounded-lg">
           <tr>
@@ -28,7 +28,7 @@ export function ExpenseTable({ expenses, searchTerm, onSearch }) {
             </tr>
           ) : (
             filteredExpenses.map((expense, index) => (
-              <tr key={index} className={index % 2 === 0 ? "bg-gray-100" : ""}>
+              <tr key={index} className={index % 2 === 0 ? "bg-gray-300" : ""}>
                 <td className="p-2">{expense.title}</td>
                 <td className="p-2">{expense.description}</td>
                 <td className="p-2">{expense.category}</td>

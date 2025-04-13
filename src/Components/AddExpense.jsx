@@ -1,5 +1,5 @@
 import { useState } from "react";
-export function AddExpense(onAddExpense) {
+export function AddExpense({ onAddExpense }) {
   const [form, setForm] = useState({
     title: "",
     description: "",

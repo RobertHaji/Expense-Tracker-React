@@ -3,12 +3,12 @@ import { ExpenseTable } from "./Components/ExpenseTable";
 import { useState } from "react";
 function App() {
   const [expenses, setExpenses] = useState([]);
-  console.log(expenses)
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleAddExpense = (newExpense) => {
-    setExpenses((prev) => [...prev, newExpense]);
+  const handleAddExpense = (expense) => {
+    setExpenses([...expenses, expense]);
   };
+  
   return (
     <>
       <main className="min-h-screen flex p-5 gap-4">
@@ -24,11 +24,11 @@ function App() {
             </p>
           </header>
           <div className="flex gap-2">
-            <AddExpense OnddExpense={handleAddExpense} />
+            <AddExpense onAddExpense={handleAddExpense} />
             <ExpenseTable
               expenses={expenses}
               searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
+              onSearch={setSearchTerm}
             />
           </div>
         </div>
