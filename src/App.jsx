@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      <main className="min-h-screen flex p-0 gap-4 border-40 border-purple-900">
+      <main className="min-h-screen flex p-0 gap-4 border-50 border-purple-900">
         <div className="w-[10%] bg-purple-900"></div>
         <div className="flex flex-col gap-6 w-full">
           <header>
