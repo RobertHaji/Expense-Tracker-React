@@ -1,14 +1,15 @@
-import { AddExpense } from "./Components/AddExpense";
-import { ExpenseTable } from "./Components/ExpenseTable";
-import { useState } from "react";
+import { AddExpense } from "./Components/AddExpense"; //component to add a new expense
+import { ExpenseTable } from "./Components/ExpenseTable"; //component to display expense table
+import { useState } from "react"; //manage state
 function App() {
-  const [expenses, setExpenses] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [expenses, setExpenses] = useState([]); //state to store all the expenses
+  const [searchTerm, setSearchTerm] = useState(""); //state to store search input
 
+  //Function adding new expense to the list
   const handleAddExpense = (expense) => {
-    setExpenses([...expenses, expense]);
+    setExpenses([...expenses, expense]); //Append new expense in existing list
   };
-  
+
   return (
     <>
       <main className="min-h-screen flex p-5 gap-4">
@@ -23,8 +24,10 @@ function App() {
               and analyze your spending
             </p>
           </header>
+
+          {/* Add expense form and expense table */}
           <div className="flex gap-2">
-            <AddExpense onAddExpense={handleAddExpense} />
+            <AddExpense onAddExpense={handleAddExpense} /> {/*pass handler */}
             <ExpenseTable
               expenses={expenses}
               searchTerm={searchTerm}

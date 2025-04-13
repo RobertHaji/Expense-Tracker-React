@@ -1,5 +1,7 @@
 import { useState } from "react";
 export function AddExpense({ onAddExpense }) {
+
+    // Form state for capturing input field
   const [form, setForm] = useState({
     title: "",
     description: "",
@@ -8,13 +10,17 @@ export function AddExpense({ onAddExpense }) {
     date: "",
   });
 
+    
+    // update form state on input change
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+    
+    // submit handler and pass form data and also reset the form
   const handleSubmit = (e) => {
-    e.preventDefault();
-    onAddExpense(form);
+    e.preventDefault(); //prevent default reload
+    onAddExpense(form); //pass expense to parent
     setForm({ title: "", description: "", category: "", amount: "", date: "" });
   };
 
@@ -23,7 +29,9 @@ export function AddExpense({ onAddExpense }) {
       <h2 className="text-xl font-bold mb-2">Add Expense</h2>
       <p className="text-sm text-gray-600 mb-4">
         Enter your expense details below
-      </p>
+          </p>
+          
+          {/* form for adding the expenses */}
       <form onSubmit={handleSubmit} className="border p-2 rounded-xl w-full">
         <input
           className="border p-2 bg-white rounded-full ... mb-2"
@@ -68,7 +76,9 @@ export function AddExpense({ onAddExpense }) {
                   value={form.date}
                   onChange={handleChange}
                   required
-        />
+              />
+              
+              {/* submit button */}
         <button className="w-full bg-purple-700 text-white py-2 hover:bg-purple-800 rounded-md ...">
           Submit
         </button>
