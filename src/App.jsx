@@ -24,7 +24,7 @@ function App() {
             </p>
           </header>
           <div className="flex gap-2">
-            <AddExpense addExpense={handleAddExpense} />
+            <AddExpense OnddExpense={handleAddExpense} />
             <ExpenseTable
               expenses={expenses}
               searchTerm={searchTerm}
