@@ -79,7 +79,7 @@ export function AddExpense({ onAddExpense }) {
               />
               
               {/* submit button */}
-        <button className="w-full bg-purple-700 text-white py-2 hover:bg-purple-800 rounded-md ...">
+        <button className="w-full bg-purple-700 text-white py-2 hover:bg-purple-800 rounded-3xl">
           Submit
         </button>
       </form>

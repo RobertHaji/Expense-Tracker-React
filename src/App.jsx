@@ -12,8 +12,8 @@ function App() {
 
   return (
     <>
-      <main className="min-h-screen flex p-5 gap-4">
-        <div className="w-[10%] bg-purple-950"></div>
+      <main className="min-h-screen flex p-0 gap-4 border-40 border-purple-900">
+        <div className="w-[10%] bg-purple-900"></div>
         <div className="flex flex-col gap-6 w-full">
           <header>
             <h1 className="font-bold font-serif text-4xl mb-1">
@@ -27,7 +27,8 @@ function App() {
 
           {/* Add expense form and expense table */}
           <div className="flex gap-2">
-            <AddExpense onAddExpense={handleAddExpense} /> {/*pass handler */}
+            <AddExpense onAddExpense={handleAddExpense} />{" "}
+            {/*onAddExpense prop allowing AddExpense form to send data back up to the App component to update the expense list. */}
             <ExpenseTable
               expenses={expenses}
               searchTerm={searchTerm}
